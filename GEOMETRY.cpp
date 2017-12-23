@@ -27,6 +27,7 @@ point rotate (point p, double theta) {
 	double rad = DEG_to_RAD(theta); // multiply theta with PI / 180.0 
 	return point(p.x * cos(rad) - p.y * sin(rad), p.x * sin(rad) + p.y * cos(rad)); 
 }
+
 /* 1D */
 // ax + by + c = 0;
 struct line {
@@ -44,6 +45,7 @@ bool areIntersect(line l1, line l2, point &p) {
 	else p.y = -(l2.a * p.x + l2.c); 
 	return true; 
 }
+
 /* 2D */
 // Check if a point is inside, outside, on circle
 int insideCircle(point_i p, point_i c, int r) {
@@ -51,6 +53,7 @@ int insideCircle(point_i p, point_i c, int r) {
 	int euc = dx * dx + dy * dy, rSq = r * r;
 	return euc < rSq ? 0 : euc == rSq ? 1 : 2;  // 0:inside, 1:border, 2:outside
 }
+
 /* 3D */
 vector<point> P; // Stores all points of polygon
 // Perimeter of polygon
